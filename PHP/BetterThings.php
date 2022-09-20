@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php
-$noes = 'no especificado.<br>';
+$noes = '<i>no especificado.</i><br>';
 $frutas = array( // nombre - colores<Array> - se usa en<Array>
   array('Manzana', array('Amarillo', 'Verde', 'Rojo'), array('Tartas', 'Pasteles', 'Compota', 'Zumo'), array('Manzano')),
   array('Plátano', array('Amarillo', 'Marrón'), array('Tartas', 'Pasteles', 'Batido')),
