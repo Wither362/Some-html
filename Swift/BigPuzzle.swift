@@ -40,39 +40,96 @@ func mundo() {
     var pongoColumnas:Bool = true
     var columnasQueTengoQuePoner:Int = filasQueTenemosQuePoner
     var longitudDelMundo:Int = 1
-    for i in 1 ... longitudDelMundo {for i in 1 ... filasQueTenemosQuePoner {world.place(Block(), facing: north, at: Coordinate(column: filasQueTenemosQuePoner, row: noSeQue))
-        noSeQue += 1}
+    for _ in 1 ... longitudDelMundo {
+        for _ in 1 ... filasQueTenemosQuePoner {
+            world.place(Block(), facing: north, at: Coordinate(column: filasQueTenemosQuePoner, row: noSeQue))
+            noSeQue += 1
+        }
         noSeQue = 0
         if pongoColumnas {
             if filasQueTenemosQuePoner != 0 {
-                for i in 1 ... columnasQueTengoQuePoner + 1 {
+                for _ in 1 ... columnasQueTengoQuePoner + 1 {
                     world.place(Block(), facing: north, at: Coordinate(column: noSeQue, row: columnasQueTengoQuePoner))
-            noSeQue += 1}} else {for i in 1 ... columnasQueTengoQuePoner {
-                world.place(Block(), facing: north, at: Coordinate(column: noSeQue, row: columnasQueTengoQuePoner))
-                noSeQue += 1}}}}
+                    noSeQue += 1
+                }
+            } else {
+                for _ in 1 ... columnasQueTengoQuePoner {
+                    world.place(Block(), facing: north, at: Coordinate(column: noSeQue, row: columnasQueTengoQuePoner))
+                    noSeQue += 1
+                }
+            }
+        }
+    }
     var numero:Int = 0
-    for i in 1 ... 7 {
-        for i in 1 ... 2 {
+    for _ in 1 ... 7 {
+        for _ in 1 ... 2 {
             world.place(Block(), facing: north, at: Coordinate(column: 1, row: numero))
         }
         numero += 1
     }
     numero = 4
-    for i in 1 ... 2 {
-        for i in 1 ... 2 {
+    for _ in 1 ... 2 {
+        for _ in 1 ... 2 {
             world.place(Block(), facing: north, at: Coordinate(column: numero, row: 9))
             world.place(Block(), facing: north, at: Coordinate(column: numero, row: 7))
         }
         world.place(Block(), facing: north, at: Coordinate(column: 6, row: 8))
         numero += 1
     } // coordenadas1Vez es para bloques
-    var coordenadas1Vez:Array<Coordinate> = [Coordinate(column: 0, row: 8), Coordinate(column: 2, row: 8), Coordinate(column: 3, row: 7), Coordinate(column: 1, row: 12), Coordinate(column: 3, row: 9), Coordinate(column: 2, row: 11), Coordinate(column: 2, row: 5), Coordinate(column: 4, row: 1), Coordinate(column: 3, row: 4), Coordinate(column: 5, row: 6), Coordinate(column: 5, row: 4), Coordinate(column: 5, row: 3), Coordinate(column: 4, row: 2), Coordinate(column:  2, row: 2)] 
+    var coordenadas1Vez: Array<Coordinate> = [
+        Coordinate(column: 0, row: 8),
+        Coordinate(column: 2, row: 8),
+        Coordinate(column: 3, row: 7),
+        Coordinate(column: 1, row: 12),
+        Coordinate(column: 3, row: 9),
+        Coordinate(column: 2, row: 11),
+        Coordinate(column: 2, row: 5),
+        Coordinate(column: 4, row: 1),
+        Coordinate(column: 3, row: 4),
+        Coordinate(column: 5, row: 6),
+        Coordinate(column: 5, row: 4),
+        Coordinate(column: 5, row: 3),
+        Coordinate(column: 4, row: 2),
+        Coordinate(column:  2, row: 2)
+    ] 
     for i in 0 ... coordenadas1Vez.count-1 {
-        for hola in 1 ... 2 {
-            world.place(Block(), facing: north, at: coordenadas1Vez[i])}} // coordenadas3Vez y coordenadas2Vez son para alternar entre interruptores y gemas, pero coordenadas2Vez también alterna entre bloques
-    var coordenadas3Vez:Array<Coordinate> = [Coordinate(column: 2, row: 9), Coordinate(column: 1, row: 9), Coordinate(column: 1, row: 8), Coordinate(column: 0, row: 9), Coordinate(column: 3, row: 8), Coordinate(column: 2, row: 7), Coordinate(column: 5, row: 8), Coordinate(column: 2, row: 0), Coordinate(column: 13, row: 12)]
-    var coordenadas2Vez:Array<Coordinate> = [Coordinate(column: 2, row: 10), Coordinate(column: 0, row: 11), Coordinate(column: 2, row: 1)]
-    var coordenadas2VezB:Array<Coordinate> = [Coordinate(column: 0, row: 12), Coordinate(column: 6, row: 6/*OMG*/), Coordinate(column: 7, row: 5), Coordinate(column: 12, row: 0), Coordinate(column: 12, row: 12), Coordinate(column: 12, row: 11), Coordinate(column: 11, row: 12), Coordinate(column: 12, row: 5), Coordinate(column: 5, row: 12), Coordinate(column: 11, row: 6), Coordinate(column: 6, row: 11), Coordinate(column: 10, row: 7), Coordinate(column: 7, row: 10), Coordinate(column: 9, row: 8), Coordinate(column: 8, row: 9)]
+        for _ in 1 ... 2 {
+            world.place(Block(), facing: north, at: coordenadas1Vez[i])
+        }
+    } // coordenadas3Vez y coordenadas2Vez son para alternar entre interruptores y gemas, pero coordenadas2Vez también alterna entre bloques
+    var coordenadas3Vez: [Coordinate] = [
+        Coordinate(column: 2, row: 9),
+        Coordinate(column: 1, row: 9),
+        Coordinate(column: 1, row: 8),
+        Coordinate(column: 0, row: 9),
+        Coordinate(column: 3, row: 8),
+        Coordinate(column: 2, row: 7),
+        Coordinate(column: 5, row: 8),
+        Coordinate(column: 2, row: 0),
+        Coordinate(column: 13, row: 12)
+    ]
+    var coordenadas2Vez:Array<Coordinate> = [
+        Coordinate(column: 2, row: 10),
+        Coordinate(column: 0, row: 11),
+        Coordinate(column: 2, row: 1)
+    ]
+    var coordenadas2VezB:Array<Coordinate> = [
+        Coordinate(column: 0, row: 12),
+        Coordinate(column: 6, row: 6/*OMG*/),
+        Coordinate(column: 7, row: 5),
+        Coordinate(column: 12, row: 0),
+        Coordinate(column: 12, row: 12),
+        Coordinate(column: 12, row: 11),
+        Coordinate(column: 11, row: 12),
+        Coordinate(column: 12, row: 5),
+        Coordinate(column: 5, row: 12),
+        Coordinate(column: 11, row: 6),
+        Coordinate(column: 6, row: 11),
+        Coordinate(column: 10, row: 7),
+        Coordinate(column: 7, row: 10),
+        Coordinate(column: 9, row: 8),
+        Coordinate(column: 8, row: 9)
+    ]
     /*var quitarBloques = []
      for i in 0 ... quitarBloques.count-1 {
      world.removeAllBlocks(at: quitarBloques[i])
@@ -82,9 +139,10 @@ func mundo() {
      } */
     if randomInt(from: 0, to: 1) == 1 { // from 0 to 1
         for i in 0 ... coordenadas2Vez.count-1 {
-            for hola in 1 ... 2 {
+            for _ in 1 ... 2 {
                 world.place(Block(), facing: north, at: coordenadas2Vez[i])
-            }}
+            }
+        }
         if randomInt(from: 0, to: 1) == 0 { // from 0 to 1, se supone que está terminado
             if lo_quieres_mas_dificil {
                 if randomInt(from: 0, to: 1) == 0 {
@@ -98,15 +156,15 @@ func mundo() {
                 world.place(Switch(), facing: north, at: coordenadas3Vez[i])
             }
             numero = 6
-            var randomdmd:Int = randomInt(from: 0, to: 1)
+            var randomdmd: Int = randomInt(from: 0, to: 1)
             noSeQue = 7
-            var blablabla:Int = 4
-            for i in 1 ... 2 {
+            var blablabla: Int = 4
+            for _ in 1 ... 2 {
                 world.place(Block(), facing: north, at: Coordinate(column: 5, row: 5))
                 world.removeBlock(atColumn: 5, row: 3)
                 world.removeBlock(atColumn: 8, row: 2)
-                for i in 1 ... 3 {
-                    for i in 1 ... 2 {
+                for _ in 1 ... 3 {
+                    for _ in 1 ... 2 {
                         world.place(Block(), facing: north, at: Coordinate(column: numero, row: 4))
                         world.place(Block(), facing: north, at: Coordinate(column: numero, row: 2))
                         world.place(Block(), facing: north, at: Coordinate(column: numero, row: 1))
@@ -118,22 +176,22 @@ func mundo() {
                     noSeQue += 1
                 }
                 world.removeBlock(atColumn: 12, row: 8)
-                for i in 1 ... 2 {
-                    for i in 1 ... 2 {
+                for _ in 1 ... 2 {
+                    for _ in 1 ... 2 {
                         world.place(Block(), facing: north, at: Coordinate(column: blablabla, row: 11))
                     }
                     blablabla += 1
                 }
             }
             blablabla = 9
-            for i in 1 ... 3 {
-                for i in 1 ... 2 {
+            for _ in 1 ... 3 {
+                for _ in 1 ... 2 {
                     world.place(Block(), facing: north, at: Coordinate(column: blablabla, row: 12))
                 }
                 blablabla += 1
             }
             if randomdmd == 0 {
-                for i in 1 ... 2 {
+                for _ in 1 ... 2 {
                     world.removeBlock(atColumn: 6, row: 1)
                     world.removeBlock(atColumn: 10, row: 1)
                 }
@@ -147,21 +205,21 @@ func mundo() {
             }
         } else {
             numero = 4
-            for i in 1 ... 9 {
-                for i in 1 ... 2 {
+            for _ in 1 ... 9 {
+                for _ in 1 ... 2 {
                     world.place(Block(), facing: north, at: Coordinate(column: numero, row: 11))
                 }
                 numero += 1
             }
             numero = 6
-            for i in 1 ... 7 {
-                for i in 1 ... 2 {
+            for _ in 1 ... 7 {
+                for _ in 1 ... 2 {
                     world.place(Block(), facing: north, at: Coordinate(column: numero, row: 9))
                 }
                 numero += 1
             }
-            var sususu:Int = randomInt(from: 0, to: 1)
-            for i in 1 ... 2 {
+            var sususu: Int = randomInt(from: 0, to: 1)
+            for _ in 1 ... 2 {
                 world.removeBlock(atColumn: 7, row: 9)
                 if lo_quieres_mas_dificil {
                     if sususu == 0 {
@@ -174,8 +232,8 @@ func mundo() {
             }
             numero = 2
             noSeQue = 6
-            for i in 1 ... 7 {
-                for i in 1 ... 2 {
+            for _ in 1 ... 7 {
+                for _ in 1 ... 2 {
                     world.place(Block(), facing: north, at: Coordinate(column: 10, row: numero))
                     world.place(Block(), facing: north, at: Coordinate(column: noSeQue, row: 0))
                 }
@@ -183,22 +241,22 @@ func mundo() {
                 noSeQue += 1
             }
             numero = 1
-            for i in 1 ... 8 {
-                for i in 1 ... 2 {
+            for _ in 1 ... 8 {
+                for _ in 1 ... 2 {
                     world.place(Block(), facing: north, at: Coordinate(column: 12, row: numero))
                 }
                 numero += 1
             }
             numero = 5
-            for i in 1 ... 5 {
-                for i in 1 ... 2 {
+            for _ in 1 ... 5 {
+                for _ in 1 ... 2 {
                     world.place(Block(), facing: north, at: Coordinate(column: numero, row: 2))
                 }
                 numero += 1
             }
             noSeQue = 8
-            for i in 1 ... 5 {
-                for i in 1 ... 2 {
+            for _ in 1 ... 5 {
+                for _ in 1 ... 2 {
                     world.place(Block(), facing: north, at: Coordinate(column:  8, row: noSeQue))
                 }
                 noSeQue -= 1
@@ -239,7 +297,7 @@ func mundo() {
         var lasCosasSonAsi:Array<Coordinate> = [Coordinate(column: 9, row: 3), Coordinate(column: 9, row: 2), Coordinate(column: 8, row: 2), Coordinate(column: 8, row: 3)]
         var tuPvtaMadrePorEstarLeyendoEsto:Int = randomInt(from: 0, to: 1)
         for i in 0 ... lasCosasSonAsi.count-1 {
-            for hola in 1 ... 2 {
+            for _ in 1 ... 2 {
                 if tuPvtaMadrePorEstarLeyendoEsto == 0 && lo_quieres_mas_dificil {
                     world.place(Gem(), facing: north, at: lasCosasSonAsi[i])
                 } else {
@@ -248,11 +306,12 @@ func mundo() {
             }
         }
         for i in 0 ... coordenadas2Vez.count-1 {
-            for hola in 1 ... 2 {
+            for _ in 1 ... 2 {
                 world.place(Block(), facing: north, at: coordenadas2Vez[i])
-            }}
+            }
+        }
         for i in 0 ... coordenadas2VezB.count-1 {
-            for hola in 1 ... 2 {
+            for _ in 1 ... 2 {
                 world.place(Block(), facing: north, at: coordenadas2VezB[i])
             }
         }
@@ -266,8 +325,8 @@ func mundo() {
             jsjsiwn += 1
         }
         jsjsiwn = 1
-        for i in 1 ... 3 {
-            for i in 1 ... 2 {
+        for _ in 1 ... 3 {
+            for _ in 1 ... 2 {
                 world.place(Block(), facing: north, at: Coordinate(column: 10, row: jsjsiwn))
             }
             jsjsiwn += 1
@@ -279,7 +338,7 @@ func mundo() {
                 world.place(Switch(), facing: north, at: coordenadas3Vez[i])
             }
         } else {
-            for i in 1 ... 2 {
+            for _ in 1 ... 2 {
                 world.place(Block(), facing: north, at: Coordinate(column: 0, row: 10))
             }
             for i in 0 ... coordenadas3Vez.count-1 {
