@@ -1,2 +1,2 @@
-# Some-html
-Some examples and tests of html and Markdown
+# Some tests
+Some examples and tests of different languages
