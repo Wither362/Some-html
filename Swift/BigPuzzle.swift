@@ -92,9 +92,9 @@ func mundo() {
         Coordinate(column: 4, row: 2),
         Coordinate(column:  2, row: 2)
     ] 
-    for i in 0 ... coordenadas1Vez.count-1 {
+    for coordinate in coordenadas1Vez {
         for _ in 1 ... 2 {
-            world.place(Block(), facing: north, at: coordenadas1Vez[i])
+            world.place(Block(), facing: north, at: coordinate)
         }
     } // coordenadas3Vez y coordenadas2Vez son para alternar entre interruptores y gemas, pero coordenadas2Vez también alterna entre bloques
     var coordenadas3Vez: [Coordinate] = [
@@ -108,12 +108,12 @@ func mundo() {
         Coordinate(column: 2, row: 0),
         Coordinate(column: 13, row: 12)
     ]
-    var coordenadas2Vez:Array<Coordinate> = [
+    var coordenadas2Vez: [Coordinate] = [
         Coordinate(column: 2, row: 10),
         Coordinate(column: 0, row: 11),
         Coordinate(column: 2, row: 1)
     ]
-    var coordenadas2VezB:Array<Coordinate> = [
+    var coordenadas2VezB: [Coordinate] = [
         Coordinate(column: 0, row: 12),
         Coordinate(column: 6, row: 6/*OMG*/),
         Coordinate(column: 7, row: 5),
